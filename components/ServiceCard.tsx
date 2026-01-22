@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { LucideIcon } from "lucide-react";
+import { LucideIcon, Hammer } from "lucide-react";
 import * as Icons from "lucide-react";
 
 interface ServiceCardProps {
@@ -11,8 +11,14 @@ interface ServiceCardProps {
   features: string[];
 }
 
+// Helper function to safely get icon component
+function getIconComponent(iconName: string): LucideIcon {
+  const icons = Icons as unknown as Record<string, LucideIcon>;
+  return icons[iconName] || icons["Hammer"] || Hammer;
+}
+
 export function ServiceCard({ title, description, icon, features }: ServiceCardProps) {
-  const IconComponent = (Icons as Record<string, LucideIcon>)[icon] || Icons.Hammer;
+  const IconComponent = getIconComponent(icon);
 
   return (
     <motion.div
