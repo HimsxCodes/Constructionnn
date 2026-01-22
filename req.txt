@@ -1,0 +1,60 @@
+PROJECT REQUIREMENTS (CLIENT CONTENT CHECKLIST)
+Construction Company Website
+
+Purpose
+- Build a professional, modern website to present your construction company, showcase services and projects, and generate leads via contact/quote inquiries.
+
+Client-Provided Content (Required)
+1) Company identity
+   - Company name (exact spelling)
+   - Company logo (preferred formats: SVG/PNG; transparent background if possible)
+   - Brand colors (if any) and preferred font style (optional)
+
+2) Company overview
+   - Short description / tagline (1–2 lines)
+   - Detailed “About the Company” content including:
+     - Year established / company history
+     - Vision / mission
+     - What the company brings to the community (values/impact)
+
+3) Services
+   - List of all services you offer
+   - Short description for each service (2–5 lines each)
+   - (Optional) Key features/benefits per service (3–6 bullet points)
+
+4) Projects / Portfolio
+   - Projects list with details for each project:
+     - Project title
+     - Location (city/area)
+     - Project type/category: Residential / Commercial / Industrial / Renovation
+     - Short description (3–6 lines)
+     - (Optional) Duration / completion date
+   - Project images (high-resolution; ideally 3–8 images per project)
+   - Confirmation that you own the rights to use these images on the website
+
+5) Company stats (for homepage/credibility section)
+   - Years of experience
+   - Completed projects (count)
+   - Satisfied clients (count)
+   - Team members (count)
+
+6) Contact information
+   - Office address
+   - Phone number(s)
+   - Email address
+   - Working hours (days & times)
+   - (Optional) Google Maps link / coordinates
+
+7) Website imagery
+   - Office/landscape/hero image (wide, high quality)
+   - (Optional) Additional brand photography for banners/sections
+
+Optional (Recommended)
+- Testimonials (client name, rating, short review, company/project type if applicable)
+- Social media links (Facebook, Instagram, LinkedIn, YouTube, etc.)
+- FAQs (5–10 common questions and answers)
+- Legal pages (Privacy Policy / Terms) if needed
+
+Notes / Assumptions
+- All content should be provided in editable text (Word/Google Doc) and images in original quality.
+- If content/images are not available, placeholder content may be used temporarily until final assets are received.

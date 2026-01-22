@@ -1,0 +1,108 @@
+import { Service } from "@/types/service";
+
+export const services: Service[] = [
+  {
+    id: "1",
+    title: "Residential Construction",
+    description: "Expert construction of custom homes, residential complexes, and multi-family developments with attention to quality and detail.",
+    icon: "Home",
+    features: [
+      "Custom home design and build",
+      "Multi-family residential projects",
+      "Luxury residential developments",
+      "Sustainable building practices",
+      "Quality craftsmanship guarantee",
+    ],
+  },
+  {
+    id: "2",
+    title: "Commercial Building",
+    description: "Full-service commercial construction for offices, retail spaces, and business facilities with modern design and efficient execution.",
+    icon: "Building2",
+    features: [
+      "Office buildings and complexes",
+      "Retail and shopping centers",
+      "Healthcare facilities",
+      "Educational institutions",
+      "LEED certification support",
+    ],
+  },
+  {
+    id: "3",
+    title: "Renovations",
+    description: "Professional renovation and remodeling services that transform existing spaces while preserving character and improving functionality.",
+    icon: "Hammer",
+    features: [
+      "Historic building restoration",
+      "Interior and exterior renovations",
+      "Structural upgrades",
+      "Modernization projects",
+      "Preservation compliance",
+    ],
+  },
+  {
+    id: "4",
+    title: "Project Management",
+    description: "Comprehensive project management ensuring on-time, on-budget delivery with clear communication and quality oversight.",
+    icon: "ClipboardCheck",
+    features: [
+      "End-to-end project coordination",
+      "Budget and timeline management",
+      "Quality control and inspections",
+      "Stakeholder communication",
+      "Risk mitigation strategies",
+    ],
+  },
+  {
+    id: "5",
+    title: "Industrial Construction",
+    description: "Specialized industrial construction for manufacturing facilities, warehouses, and distribution centers built for operational efficiency.",
+    icon: "Factory",
+    features: [
+      "Manufacturing facilities",
+      "Warehouse and distribution centers",
+      "Industrial complexes",
+      "Heavy machinery installation",
+      "Operational efficiency focus",
+    ],
+  },
+  {
+    id: "6",
+    title: "Design & Planning",
+    description: "Architectural design and construction planning services that optimize space, functionality, and building performance.",
+    icon: "DraftingCompass",
+    features: [
+      "Architectural design services",
+      "Construction planning and permits",
+      "3D visualization and modeling",
+      "Code compliance review",
+      "Sustainable design integration",
+    ],
+  },
+  {
+    id: "7",
+    title: "Infrastructure Development",
+    description: "Large-scale infrastructure projects including roads, utilities, and site development for major construction projects.",
+    icon: "Road",
+    features: [
+      "Site preparation and grading",
+      "Utility installation",
+      "Road and parking construction",
+      "Drainage and stormwater systems",
+      "Infrastructure maintenance",
+    ],
+  },
+  {
+    id: "8",
+    title: "Maintenance & Repairs",
+    description: "Ongoing maintenance and repair services to keep buildings and facilities in optimal condition long after construction completion.",
+    icon: "Wrench",
+    features: [
+      "Preventive maintenance programs",
+      "Emergency repair services",
+      "Facility management",
+      "System upgrades and retrofits",
+      "24/7 support availability",
+    ],
+  },
+];
