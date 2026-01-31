@@ -4,7 +4,7 @@ import { projects } from "@/data/projects";
 import { FadeIn } from "@/components/FadeIn";
 
 export const metadata: Metadata = {
-  title: "Construction Projects Portfolio | BuildPro - Featured Projects",
+  title: "Construction Projects Portfolio | JB Engineering - Featured Projects",
   description:
     "Explore our portfolio of successful construction projects including residential complexes, commercial buildings, industrial facilities, and renovation projects. View before and after photos.",
   keywords: [
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     "construction gallery",
   ],
   openGraph: {
-    title: "Construction Projects Portfolio | BuildPro",
+    title: "Construction Projects Portfolio | JB Engineering",
     description: "Explore our portfolio of successful construction projects across all sectors.",
   },
 };

@@ -320,10 +320,10 @@ export function ContactForm() {
             <div className="flex items-center space-x-3">
               <Mail className="w-5 h-5 text-primary flex-shrink-0" />
               <a
-                href="mailto:info@buildpro.com"
+                href="mailto:info@jbengineering.com"
                 className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
               >
-                info@buildpro.com
+                info@jbengineering.com
               </a>
             </div>
             <div className="flex items-start space-x-3">

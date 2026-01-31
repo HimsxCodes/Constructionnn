@@ -11,11 +11,11 @@ import { FadeIn } from "@/components/FadeIn";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "BuildPro Construction | Building Tomorrow's Landmarks",
+  title: "JB Engineering | Building Tomorrow's Landmarks",
   description:
     "Expert construction services delivering excellence, reliability, and unmatched quality for over 25 years. View our portfolio of successful residential, commercial, and industrial projects.",
   openGraph: {
-    title: "BuildPro Construction | Building Tomorrow's Landmarks",
+    title: "JB Engineering | Building Tomorrow's Landmarks",
     description:
       "Expert construction services delivering excellence, reliability, and unmatched quality for over 25 years.",
   },

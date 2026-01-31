@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/FadeIn";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Construction Services | BuildPro - Residential, Commercial & Industrial",
+  title: "Construction Services | JB Engineering - Residential, Commercial & Industrial",
   description:
     "Comprehensive construction services including residential construction, commercial building, industrial facilities, renovations, project management, and more. Expert craftsmanship for every project.",
   keywords: [
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "construction planning",
   ],
   openGraph: {
-    title: "Construction Services | BuildPro",
+    title: "Construction Services | JB Engineering",
     description:
       "Comprehensive construction services including residential, commercial, and industrial projects.",
   },

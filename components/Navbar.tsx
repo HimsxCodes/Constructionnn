@@ -41,7 +41,7 @@ export function Navbar() {
           <Link href="/" className="flex items-center space-x-2">
             <Building2 className="w-8 h-8 text-primary" />
             <span className="text-xl font-heading font-bold text-slate-dark dark:text-white">
-              BuildPro
+              JB Engineering
             </span>
           </Link>
 

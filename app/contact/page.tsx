@@ -3,9 +3,9 @@ import { ContactForm } from "@/components/ContactForm";
 import { FadeIn } from "@/components/FadeIn";
 
 export const metadata: Metadata = {
-  title: "Contact BuildPro Construction | Get a Free Quote",
+  title: "Contact JB Engineering | Get a Free Quote",
   description:
-    "Contact BuildPro Construction for your next project. Get a free quote for residential, commercial, or industrial construction services. We're here to help bring your vision to life.",
+    "Contact JB Engineering for your next project. Get a free quote for residential, commercial, or industrial construction services. We're here to help bring your vision to life.",
   keywords: [
     "contact construction company",
     "construction quote",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "construction consultation",
   ],
   openGraph: {
-    title: "Contact BuildPro Construction | Get a Free Quote",
+    title: "Contact JB Engineering | Get a Free Quote",
     description: "Contact us for your next construction project. Get a free quote today.",
   },
 };

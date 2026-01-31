@@ -19,7 +19,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "BuildPro Construction | Commercial & Residential Builders",
+  title: "JB Engineering | Commercial & Residential Builders",
   description:
     "Expert construction services delivering excellence, reliability, and unmatched quality for over 25 years. Specializing in residential, commercial, and industrial construction projects.",
   keywords: [
@@ -33,18 +33,18 @@ export const metadata: Metadata = {
     "general contractor",
     "construction services",
   ],
-  authors: [{ name: "BuildPro Construction" }],
+  authors: [{ name: "JB Engineering" }],
   openGraph: {
-    title: "BuildPro Construction | Commercial & Residential Builders",
+    title: "JB Engineering | Commercial & Residential Builders",
     description:
       "Expert construction services delivering excellence, reliability, and unmatched quality for over 25 years.",
     type: "website",
     locale: "en_US",
-    siteName: "BuildPro Construction",
+    siteName: "JB Engineering",
   },
   twitter: {
     card: "summary_large_image",
-    title: "BuildPro Construction | Commercial & Residential Builders",
+    title: "JB Engineering | Commercial & Residential Builders",
     description:
       "Expert construction services delivering excellence, reliability, and unmatched quality for over 25 years.",
   },

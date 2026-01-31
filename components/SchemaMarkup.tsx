@@ -2,10 +2,10 @@ export function SchemaMarkup() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "BuildPro Construction",
-    image: "https://buildpro.com/logo.png",
-    "@id": "https://buildpro.com",
-    url: "https://buildpro.com",
+    name: "JB Engineering",
+    image: "https://jbengineering.com/logo.png",
+    "@id": "https://jbengineering.com",
+    url: "https://jbengineering.com",
     telephone: "+1234567890",
     priceRange: "$$$",
     address: {
@@ -36,9 +36,9 @@ export function SchemaMarkup() {
       },
     ],
     sameAs: [
-      "https://www.facebook.com/buildpro",
-      "https://www.linkedin.com/company/buildpro",
-      "https://twitter.com/buildpro",
+      "https://www.facebook.com/jbengineering",
+      "https://www.linkedin.com/company/jbengineering",
+      "https://twitter.com/jbengineering",
     ],
   };
 
@@ -48,7 +48,7 @@ export function SchemaMarkup() {
     serviceType: "Construction Services",
     provider: {
       "@type": "LocalBusiness",
-      name: "BuildPro Construction",
+      name: "JB Engineering",
     },
     areaServed: {
       "@type": "Country",

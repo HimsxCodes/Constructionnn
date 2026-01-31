@@ -3,9 +3,9 @@ import { FadeIn } from "@/components/FadeIn";
 import { Award, Users, Shield, Target } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About BuildPro Construction | 25+ Years of Excellence",
+  title: "About JB Engineering | 25+ Years of Excellence",
   description:
-    "Learn about BuildPro Construction - a trusted construction company with over 25 years of experience, 500+ completed projects, and a commitment to quality, safety, and customer satisfaction.",
+    "Learn about JB Engineering - a trusted construction company with over 25 years of experience, 500+ completed projects, and a commitment to quality, safety, and customer satisfaction.",
   keywords: [
     "construction company",
     "about construction company",
@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     "construction certifications",
   ],
   openGraph: {
-    title: "About BuildPro Construction | 25+ Years of Excellence",
+    title: "About JB Engineering | 25+ Years of Excellence",
     description:
-      "Learn about BuildPro Construction - a trusted construction company with over 25 years of experience.",
+      "Learn about JB Engineering - a trusted construction company with over 25 years of experience.",
   },
 };
 
@@ -50,7 +50,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-heading font-bold text-slate-dark dark:text-white mb-6">
-              About BuildPro
+              About JB Engineering
             </h1>
             <p className="text-xl text-slate-600 dark:text-slate-300 max-w-3xl mx-auto">
               Building excellence since 1995. Your trusted partner for construction projects of all
@@ -65,7 +65,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-slate-600 dark:text-slate-300">
                 <p>
-                  Founded in 1995, BuildPro Construction has grown from a small local contractor to
+                  Founded in 1995, JB Engineering has grown from a small local contractor to
                   one of the region&apos;s most trusted construction companies. With over 25 years
                   of experience, we&apos;ve completed more than 500 projects across residential,
                   commercial, and industrial sectors.

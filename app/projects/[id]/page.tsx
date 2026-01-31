@@ -17,15 +17,15 @@ export async function generateMetadata({ params }: ProjectPageProps): Promise<Me
 
   if (!project) {
     return {
-      title: "Project Not Found | BuildPro",
+      title: "Project Not Found | JB Engineering",
     };
   }
 
   return {
-    title: `${project.title} | BuildPro Construction Project`,
+    title: `${project.title} | JB Engineering Project`,
     description: project.description,
     openGraph: {
-      title: `${project.title} | BuildPro Construction`,
+      title: `${project.title} | JB Engineering`,
       description: project.description,
       images: project.images.length > 0 ? [project.images[0]] : [],
     },

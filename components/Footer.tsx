@@ -26,7 +26,7 @@ export function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <Building2 className="w-8 h-8 text-primary" />
-              <span className="text-xl font-heading font-bold">BuildPro</span>
+              <span className="text-xl font-heading font-bold">JB Engineering</span>
             </div>
             <p className="text-slate-300 text-sm mb-4">
               Building excellence since 1995. Your trusted partner for construction projects of all
@@ -105,10 +105,10 @@ export function Footer() {
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                 <a
-                  href="mailto:info@buildpro.com"
+                  href="mailto:info@jbengineering.com"
                   className="hover:text-primary transition-colors"
                 >
-                  info@buildpro.com
+                  info@jbengineering.com
                 </a>
               </li>
               <li className="flex items-start space-x-3">
@@ -120,7 +120,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-slate-700 mt-8 pt-8 text-center text-sm text-slate-400">
-          <p>&copy; {currentYear} BuildPro Construction. All rights reserved.</p>
+          <p>&copy; {currentYear} JB Engineering. All rights reserved.</p>
         </div>
       </div>
     </footer>
