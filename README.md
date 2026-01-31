@@ -121,6 +121,37 @@ Place project images in `public/projects/` directory and update image paths in p
 - Safari (latest)
 - Edge (latest)
 
+## Tech Stack Details
+
+- **Framework**: Next.js 14.2.5 (App Router)
+- **Language**: TypeScript 5.5.3
+- **Styling**: Tailwind CSS 3.4.4
+- **Animations**: Framer Motion 11.3.19
+- **Icons**: Lucide React 0.400.0
+- **Fonts**: Inter & Poppins (Google Fonts)
+
+## Development Notes
+
+- All components using framer-motion are marked with `"use client"` directive
+- Theme system uses localStorage for persistence
+- Form validation includes email and phone number validation
+- Images are optimized using Next.js Image component with WebP/AVIF support
+
+## Troubleshooting
+
+### PowerShell Execution Policy Error
+If you encounter PowerShell script execution errors on Windows, use Command Prompt (cmd.exe) instead, or run:
+```powershell
+powershell -ExecutionPolicy Bypass -Command "npm run dev"
+```
+
+### Framer Motion Errors
+If you see framer-motion module errors, clear the Next.js cache:
+```bash
+rm -rf .next
+npm run dev
+```
+
 ## License
 
 This project is proprietary and confidential.
