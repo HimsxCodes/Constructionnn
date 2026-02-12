@@ -3,7 +3,7 @@ export function SchemaMarkup() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "JB Engineering",
-    image: "https://jbengineering.com/logo.png",
+    image: "/images/logo.png",
     "@id": "https://jbengineering.com",
     url: "https://jbengineering.com",
     telephone: "+1234567890",

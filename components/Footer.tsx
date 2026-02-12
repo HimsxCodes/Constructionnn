@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Building2, Mail, Phone, MapPin, Clock } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone, MapPin, Clock } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -25,7 +26,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <Building2 className="w-8 h-8 text-primary" />
+              <Image
+                src="/images/logo.png"
+                alt="JB Engineering Logo"
+                width={32}
+                height={32}
+                className="h-8 w-auto"
+              />
               <span className="text-xl font-heading font-bold">JB Engineering</span>
             </div>
             <p className="text-slate-300 text-sm mb-4">
