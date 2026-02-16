@@ -7,11 +7,16 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ThemeToggle } from "./ThemeToggle";
+import { useTheme } from "@/hooks/useTheme";
+import logoImg from "@/images/logo.png";
+import logo2Img from "@/images/logo2.png";
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { theme, mounted } = useTheme();
+  const logoSrc = mounted && theme === "dark" ? logo2Img : logoImg;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +46,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-20">
           <Link href="/" className="flex items-center space-x-2">
             <Image
-              src="/images/logo.png"
+              src={logoSrc}
               alt="JB Engineering Logo"
               width={32}
               height={32}

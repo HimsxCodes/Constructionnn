@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import logo2Img from "@/images/logo2.png";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -27,7 +30,7 @@ export function Footer() {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <Image
-                src="/images/logo.png"
+                src={logo2Img}
                 alt="JB Engineering Logo"
                 width={32}
                 height={32}
