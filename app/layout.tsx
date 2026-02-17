@@ -20,6 +20,10 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "JB Engineering | Commercial & Residential Builders",
+  icons: {
+    icon: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
   description:
     "Expert construction services delivering excellence, reliability, and unmatched quality for over 25 years. Specializing in residential, commercial, and industrial construction projects.",
   keywords: [
