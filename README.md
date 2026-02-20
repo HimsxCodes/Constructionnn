@@ -27,12 +27,44 @@ A production-ready construction company website built with Next.js 14, TypeScrip
 npm install
 ```
 
-2. Run the development server:
+2. **Environment variables** (Get a Quote feature): Copy `.env.local.example` to `.env.local` and fill in your values:
+   - `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` from [Supabase](https://supabase.com) → Project Settings → API
+   - `RESEND_API_KEY` from [Resend](https://resend.com)
+   - `ADMIN_EMAIL`: receiver email(s), comma-separated for multiple
+
+3. Run the development server:
 ```bash
 npm run dev
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+### Get a Quote – Supabase table setup
+
+In the Supabase **SQL Editor**, run the following to create the `quote_requests` table:
+
+```sql
+create table public.quote_requests (
+  id uuid not null default gen_random_uuid (),
+  created_at timestamp with time zone not null default now(),
+  name text not null,
+  email text not null,
+  phone text not null,
+  project_type text not null,
+  budget text null,
+  message text not null,
+  status text not null default 'new'::text,
+  constraint quote_requests_pkey primary key (id)
+);
+
+-- Optional: enable Row Level Security (RLS) and allow anonymous inserts for the form
+alter table public.quote_requests enable row level security;
+
+create policy "Allow anonymous insert for quote form"
+  on public.quote_requests for insert
+  to anon
+  with check (true);
+```
 
 ### Build for Production
 
