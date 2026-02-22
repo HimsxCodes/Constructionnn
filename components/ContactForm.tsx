@@ -341,10 +341,10 @@ export function ContactForm() {
             <div className="flex items-center space-x-3">
               <Mail className="w-5 h-5 text-primary flex-shrink-0" />
               <a
-                href="mailto:info@jbengineering.com"
+                href="mailto:boradjay2@gmail.com"
                 className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
               >
-                info@jbengineering.com
+                boradjay2@gmail.com
               </a>
             </div>
             <div className="flex items-start space-x-3">
