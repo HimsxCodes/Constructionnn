@@ -104,12 +104,12 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-slate-300">
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span>123 Construction Ave, Building City, BC 12345</span>
+                <span>Nikol, Ahmedabad</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-                <a href="tel:+1234567890" className="hover:text-primary transition-colors">
-                  (123) 456-7890
+                <a href="tel:+917016475798" className="hover:text-primary transition-colors">
+                  +91 7016475798
                 </a>
               </li>
               <li className="flex items-center space-x-3">

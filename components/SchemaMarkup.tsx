@@ -6,20 +6,18 @@ export function SchemaMarkup() {
     image: "/images/logo.png",
     "@id": "https://jbengineering.com",
     url: "https://jbengineering.com",
-    telephone: "+1234567890",
-    priceRange: "$$$",
+    telephone: "+91 7016475798",
+    priceRange: "₹₹₹",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "123 Construction Ave",
-      addressLocality: "Building City",
-      addressRegion: "BC",
-      postalCode: "12345",
-      addressCountry: "US",
+      addressLocality: "Nikol",
+      addressRegion: "Ahmedabad",
+      addressCountry: "IN",
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: 40.7128,
-      longitude: -74.006,
+      latitude: 23.0225,
+      longitude: 72.5714,
     },
     openingHoursSpecification: [
       {
@@ -52,7 +50,7 @@ export function SchemaMarkup() {
     },
     areaServed: {
       "@type": "Country",
-      name: "United States",
+      name: "India",
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",

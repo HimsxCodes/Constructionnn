@@ -264,11 +264,11 @@ export function ContactForm() {
               className="w-full px-4 py-3 rounded-lg border-2 border-slate-300 dark:border-slate-600 focus:border-primary bg-white dark:bg-slate-800 text-slate-dark dark:text-white focus:outline-none transition-colors"
             >
               <option value="">Select budget range</option>
-              <option value="under-100k">Under $100,000</option>
-              <option value="100k-500k">$100,000 - $500,000</option>
-              <option value="500k-1m">$500,000 - $1,000,000</option>
-              <option value="1m-5m">$1,000,000 - $5,000,000</option>
-              <option value="over-5m">Over $5,000,000</option>
+              <option value="under-50l">Under ₹50 Lakh</option>
+              <option value="50l-2cr">₹50 Lakh - ₹2 Crore</option>
+              <option value="2cr-5cr">₹2 Crore - ₹5 Crore</option>
+              <option value="5cr-25cr">₹5 Crore - ₹25 Crore</option>
+              <option value="over-25cr">Over ₹25 Crore</option>
             </select>
           </div>
 
@@ -326,18 +326,16 @@ export function ContactForm() {
             <div className="flex items-start space-x-3">
               <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
               <div className="text-slate-600 dark:text-slate-300 text-sm">
-                123 Construction Ave
-                <br />
-                Building City, BC 12345
+                Nikol, Ahmedabad
               </div>
             </div>
             <div className="flex items-center space-x-3">
               <Phone className="w-5 h-5 text-primary flex-shrink-0" />
               <a
-                href="tel:+1234567890"
+                href="tel:+917016475798"
                 className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
               >
-                (123) 456-7890
+                +91 7016475798
               </a>
             </div>
             <div className="flex items-center space-x-3">

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { projects } from "@/data/projects";
 import { BeforeAfterSlider } from "@/components/BeforeAfterSlider";
-import { MapPin, Calendar, DollarSign, User } from "lucide-react";
+import { MapPin, Calendar, IndianRupee, User } from "lucide-react";
 import { formatCurrency } from "@/lib/validation";
 import { Project } from "@/types/project";
 
@@ -128,7 +128,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
                 </div>
                 {project.budget && (
                   <div className="flex items-start space-x-3">
-                    <DollarSign className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <IndianRupee className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <div className="text-sm text-slate-500 dark:text-slate-400">Budget</div>
                       <div className="font-semibold text-slate-dark dark:text-white">
