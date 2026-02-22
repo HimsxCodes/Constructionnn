@@ -15,18 +15,12 @@ export function Footer() {
       { href: "/projects", label: "Projects" },
       { href: "/contact", label: "Contact" },
     ],
-    services: [
-      { href: "/services#residential", label: "Residential" },
-      { href: "/services#commercial", label: "Commercial" },
-      { href: "/services#industrial", label: "Industrial" },
-      { href: "/services#renovation", label: "Renovations" },
-    ],
   };
 
   return (
     <footer className="bg-slate-dark dark:bg-slate-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <Image
@@ -84,22 +78,6 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-heading font-semibold mb-4">Services</h3>
-            <ul className="space-y-2">
-              {footerLinks.services.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-slate-300 hover:text-primary transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
             <h3 className="font-heading font-semibold mb-4">Contact Info</h3>
             <ul className="space-y-3 text-sm text-slate-300">
               <li className="flex items-start space-x-3">
@@ -115,10 +93,10 @@ export function Footer() {
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                 <a
-                  href="mailto:info@jbengineering.com"
+                  href="mailto:boradjay2@gmail.com"
                   className="hover:text-primary transition-colors"
                 >
-                  info@jbengineering.com
+                  boradjay2@gmail.com
                 </a>
               </li>
               <li className="flex items-start space-x-3">

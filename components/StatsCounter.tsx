@@ -10,10 +10,10 @@ interface StatItem {
 }
 
 const stats: StatItem[] = [
-  { value: 25, label: "Years of Experience", suffix: "+" },
-  { value: 500, label: "Completed Projects", suffix: "+" },
-  { value: 450, label: "Satisfied Clients", suffix: "+" },
-  { value: 120, label: "Team Members", suffix: "+" },
+  { value: 1, label: "Year of Excellence", suffix: "+" },
+  { value: 200, label: "Completed Projects", suffix: "+" },
+  { value: 180, label: "Satisfied Clients", suffix: "+" },
+  { value: 90, label: "Retention Rate", suffix: "%" },
 ];
 
 export function StatsCounter() {
