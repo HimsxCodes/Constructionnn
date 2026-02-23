@@ -88,9 +88,9 @@ export default function AboutPage() {
                     <Target className="text-primary" /> Our Mission
                   </h2>
                   <p className="text-lg text-slate-600 dark:text-slate-300">
-                    To infuse every project—from the most modest to the most monumental—with a
+                    To infuse every project from the most modest to the most monumental with a
                     &apos;Value&apos; that resonates in our clients&apos; lives and legacies. We do not just
-                    build; we master the craft of difference, ensuring every client feels the impact of our dedication.
+                    build, we master the craft of difference, ensuring every client feels the impact of our dedication.
                   </p>
                 </div>
               </div>
@@ -113,7 +113,7 @@ export default function AboutPage() {
                 <div className="flex items-center gap-4">
                   <div className="text-4xl font-bold text-primary">90%</div>
                   <div className="text-slate-600 dark:text-slate-300 font-medium">
-                    Client retention rate—an ironclad testament to the trust we build.
+                    Client retention rate-an ironclad testament to the trust we build.
                   </div>
                 </div>
                 <p className="text-slate-600 dark:text-slate-300 pt-4 border-t border-slate-200 dark:border-slate-700">
