@@ -140,8 +140,8 @@ export function ContactForm() {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      <div className="lg:col-span-2">
+    <div className="flex flex-col lg:flex-row gap-8 lg:items-start">
+      <div className="flex-1">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -317,44 +317,46 @@ export function ContactForm() {
         </form>
       </div>
 
-      <div className="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 space-y-6">
-        <div>
-          <h3 className="text-xl font-heading font-bold text-slate-dark dark:text-white mb-4">
-            Contact Information
-          </h3>
-          <div className="space-y-4">
-            <div className="flex items-start space-x-3">
-              <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-              <div className="text-slate-600 dark:text-slate-300 text-sm">
-                B/1, Karnavati Park Shopping, Nikol Gam Rd, opp. Mansarovar Complex, Nikol, Ahmedabad, Gujarat 382350
+      <div className="w-full lg:max-w-sm">
+        <div className="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 space-y-6">
+          <div>
+            <h3 className="text-xl font-heading font-bold text-slate-dark dark:text-white mb-4">
+              Contact Information
+            </h3>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                <div className="text-slate-600 dark:text-slate-300 text-sm">
+                  B/1, Karnavati Park Shopping, Nikol Gam Rd, opp. Mansarovar Complex, Nikol, Ahmedabad, Gujarat 382350
+                </div>
               </div>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-              <a
-                href="tel:+917016475798"
-                className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
-              >
-                +91 7016475798
-              </a>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-              <a
-                href="mailto:jbenginnering96@gmail.com"
-                className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
-              >
-                jbenginnering96@gmail.com
-              </a>
-            </div>
-            <div className="flex items-start space-x-3">
-              <Clock className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-              <div className="text-slate-600 dark:text-slate-300 text-sm">
-                Monday - Friday: 7AM - 6PM
-                <br />
-                Saturday: 8AM - 4PM
-                <br />
-                Sunday: Closed
+              <div className="flex items-center space-x-3">
+                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
+                <a
+                  href="tel:+917016475798"
+                  className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
+                >
+                  +91 7016475798
+                </a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
+                <a
+                  href="mailto:jbenginnering96@gmail.com"
+                  className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
+                >
+                  jbenginnering96@gmail.com
+                </a>
+              </div>
+              <div className="flex items-start space-x-3">
+                <Clock className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                <div className="text-slate-600 dark:text-slate-300 text-sm">
+                  Monday - Friday: 7AM - 6PM
+                  <br />
+                  Saturday: 8AM - 4PM
+                  <br />
+                  Sunday: Closed
+                </div>
               </div>
             </div>
           </div>
