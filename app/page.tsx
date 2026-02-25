@@ -39,7 +39,7 @@ export default function Home() {
           </FadeIn>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.slice(0, 4).map((service, index) => (
-              <FadeIn key={service.id} delay={index * 0.1}>
+              <FadeIn key={service.id} delay={index * 0.1} className="h-full">
                 <ServiceCard {...service} />
               </FadeIn>
             ))}

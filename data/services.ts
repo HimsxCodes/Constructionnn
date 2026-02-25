@@ -6,7 +6,7 @@ export const services: Service[] = [
     title: "Chemical Anchor Fastening",
     description:
       "Professional chemical anchor installation for secure, high-strength fastening in concrete, masonry, and structural applications.",
-    icon: "Anchor",
+    icon: "TestTube",
     features: [
       "High-load anchoring in concrete and masonry",
       "Cracked and uncracked concrete applications",
@@ -20,7 +20,7 @@ export const services: Service[] = [
     title: "RCC Slab & Floor Cutting",
     description:
       "Precision cutting of reinforced concrete slabs and floors for openings, modifications, and controlled demolition with minimal vibration.",
-    icon: "Layers",
+    icon: "SplitSquareVertical",
     features: [
       "Controlled slab and floor cutting",
       "Opening creation for stairs, elevators, and ducts",
@@ -34,7 +34,7 @@ export const services: Service[] = [
     title: "Rebar Fixing Application",
     description:
       "Expert reinforcement bar (rebar) fixing and placement for RCC structures, ensuring correct lap length, spacing, and cover as per design.",
-    icon: "GripVertical",
+    icon: "Grid3x3",
     features: [
       "Rebar cutting, bending, and fixing as per BBS",
       "Column, beam, and slab reinforcement",
@@ -48,7 +48,7 @@ export const services: Service[] = [
     title: "Groove Filling & Cutting",
     description:
       "Groove cutting in concrete and asphalt for services, joints, and expansion, plus professional groove filling and sealing solutions.",
-    icon: "Box",
+    icon: "Rows2",
     features: [
       "Precision groove cutting for cables and pipes",
       "Expansion and control joint grooving",
@@ -62,7 +62,7 @@ export const services: Service[] = [
     title: "Diamond Core Cutting",
     description:
       "Accurate diamond core drilling for circular openings in concrete, brick, and stone—for MEP penetrations, sampling, and anchor holes.",
-    icon: "CircleDot",
+    icon: "Target",
     features: [
       "Core drilling from small to large diameters",
       "Vertical, horizontal, and angled drilling",
@@ -76,7 +76,7 @@ export const services: Service[] = [
     title: "Demolition Breaking",
     description:
       "Controlled demolition and breaking of concrete, masonry, and structures using hydraulic breakers and modern demolition techniques.",
-    icon: "Trash2",
+    icon: "Pickaxe",
     features: [
       "Selective demolition and strip-out",
       "Concrete breaking and removal",
@@ -104,7 +104,7 @@ export const services: Service[] = [
     title: "Wire Saw Cutting",
     description:
       "Wire saw cutting for large-scale concrete and stone cutting where conventional saws cannot reach—dams, bridges, thick walls, and foundations.",
-    icon: "Scissors",
+    icon: "ScissorsLineDashed",
     features: [
       "Thick concrete and mass concrete cutting",
       "Irregular and confined space cutting",
