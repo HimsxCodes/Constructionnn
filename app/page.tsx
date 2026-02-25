@@ -3,7 +3,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { ServiceCard } from "@/components/ServiceCard";
 import { ProjectGallery } from "@/components/ProjectGallery";
 import { StatsCounter } from "@/components/StatsCounter";
-import { TestimonialCard } from "@/components/TestimonialCard";
+import { GoogleReviews } from "@/components/GoogleReviews";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
 import { testimonials } from "@/data/testimonials";
@@ -60,19 +60,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center mb-12">
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-dark dark:text-white mb-4">
-              Client Testimonials
+              Client Reviews
             </h2>
             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Hear from our satisfied clients about their experience working with us
+              Read what our clients are saying about us on Google.
             </p>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.slice(0, 6).map((testimonial, index) => (
-              <FadeIn key={testimonial.id} delay={index * 0.1}>
-                <TestimonialCard testimonial={testimonial} />
-              </FadeIn>
-            ))}
-          </div>
+          <GoogleReviews />
         </div>
       </section>
     </>
