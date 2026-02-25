@@ -33,8 +33,7 @@ export function Footer() {
               <span className="text-xl font-heading font-bold">JB Engineering</span>
             </div>
             <p className="text-slate-300 text-sm mb-4">
-              Building excellence since 1995. Your trusted partner for construction projects of all
-              sizes.
+              Building excellence since 2024. Your trusted partner for construction projects of all sizes.
             </p>
             <div className="flex space-x-4">
               <a
