@@ -9,12 +9,12 @@ export interface QuoteNotificationData {
   message: string;
 }
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function sendQuoteNotification(data: QuoteNotificationData): Promise<{ success: boolean; error?: string }> {
   if (!process.env.RESEND_API_KEY) {
     return { success: false, error: "RESEND_API_KEY is not configured" };
   }
+
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   const adminEmails = process.env.ADMIN_EMAIL
     ? process.env.ADMIN_EMAIL.split(",").map((e) => e.trim()).filter(Boolean)
