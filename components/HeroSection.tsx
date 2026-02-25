@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import heroImg from "@/images/heroimage.jpg";
 
 export function HeroSection() {
   return (
@@ -12,7 +13,7 @@ export function HeroSection() {
         <div
           className="w-full h-full bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('/hero-construction.jpg')",
+            backgroundImage: `url('${heroImg.src}')`,
           }}
         />
       </div>

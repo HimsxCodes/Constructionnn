@@ -68,18 +68,33 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
             <div className="lg:col-span-2">
               {project.images.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-                  {project.images.map((image, index) => (
-                    <div key={index} className="relative h-64 rounded-lg overflow-hidden bg-slate-200 dark:bg-slate-700">
-                      <Image
-                        src={image}
-                        alt={`${project.title} - Image ${index + 1}`}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
+                <div className="space-y-4 mb-8">
+                  {/* First Image (Larger) */}
+                  <div className="relative h-96 md:h-[500px] rounded-lg overflow-hidden bg-slate-200 dark:bg-slate-700">
+                    <Image
+                      src={project.images[0]}
+                      alt={`${project.title} - Main Image`}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 1024px) 100vw, 66vw"
+                    />
+                  </div>
+                  {/* Subsequent Images (Smaller in a grid) */}
+                  {project.images.length > 1 && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {project.images.slice(1).map((image, index) => (
+                        <div key={index} className="relative h-64 rounded-lg overflow-hidden bg-slate-200 dark:bg-slate-700">
+                          <Image
+                            src={image}
+                            alt={`${project.title} - Image ${index + 2}`}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                          />
+                        </div>
+                      ))}
                     </div>
-                  ))}
+                  )}
                 </div>
               ) : (
                 <div className="h-64 rounded-lg bg-slate-200 dark:bg-slate-700 flex items-center justify-center mb-8">
@@ -88,7 +103,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
               )}
             </div>
 
-            <div className="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 space-y-6">
+            <div className="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 space-y-6 h-fit">
               <h2 className="text-2xl font-heading font-bold text-slate-dark dark:text-white">
                 Project Details
               </h2>

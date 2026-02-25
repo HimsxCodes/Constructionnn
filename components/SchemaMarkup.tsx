@@ -1,9 +1,11 @@
+import logoImg from "@/images/logo.png";
+
 export function SchemaMarkup() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "JB Engineering",
-    image: "/images/logo.png",
+    image: logoImg.src,
     "@id": "https://jbengineering.com",
     url: "https://jbengineering.com",
     telephone: "+91 7016475798",

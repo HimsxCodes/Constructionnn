@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Facebook, Linkedin, Twitter } from "lucide-react";
 import logo2Img from "@/images/logo2.png";
 
 export function Footer() {
@@ -42,21 +42,21 @@ export function Footer() {
                 className="w-10 h-10 rounded-lg bg-slate-700 flex items-center justify-center hover:bg-primary transition-colors"
                 aria-label="Facebook"
               >
-                <span className="text-sm">f</span>
+                <Facebook className="w-5 h-5" />
               </a>
               <a
                 href="#"
                 className="w-10 h-10 rounded-lg bg-slate-700 flex items-center justify-center hover:bg-primary transition-colors"
                 aria-label="LinkedIn"
               >
-                <span className="text-sm">in</span>
+                <Linkedin className="w-5 h-5" />
               </a>
               <a
                 href="#"
                 className="w-10 h-10 rounded-lg bg-slate-700 flex items-center justify-center hover:bg-primary transition-colors"
                 aria-label="Twitter"
               >
-                <span className="text-sm">t</span>
+                <Twitter className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -82,7 +82,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-slate-300">
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
-                <span>Nikol, Ahmedabad</span>
+                <span>B/1, Karnavati Park Shopping, Nikol Gam Rd, opp. Mansarovar Complex, Nikol, Ahmedabad, Gujarat 382350</span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0" />
@@ -93,10 +93,10 @@ export function Footer() {
               <li className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0" />
                 <a
-                  href="mailto:boradjay2@gmail.com"
+                  href="mailto:jbenginnering96@gmail.com"
                   className="hover:text-primary transition-colors"
                 >
-                  boradjay2@gmail.com
+                  jbenginnering96@gmail.com
                 </a>
               </li>
               <li className="flex items-start space-x-3">

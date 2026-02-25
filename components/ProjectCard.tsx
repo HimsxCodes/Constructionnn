@@ -26,21 +26,34 @@ export function ProjectCard({ project }: ProjectCardProps) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
     >
-      <div className="relative h-64 overflow-hidden">
+      <div className="relative h-64 overflow-hidden group/image">
         {project.images[0] ? (
-          <Image
-            src={project.images[0]}
-            alt={`${project.title} construction project`}
-            fill
-            className="object-cover group-hover:scale-110 transition-transform duration-500"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          />
+          <>
+            <Image
+              src={project.images[0]}
+              alt={`${project.title} construction project`}
+              fill
+              className={`object-cover transition-all duration-700 ${
+                project.images[1] ? "group-hover/image:opacity-0" : "group-hover/image:scale-110"
+              }`}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
+            {project.images[1] && (
+              <Image
+                src={project.images[1]}
+                alt={`${project.title} construction project secondary view`}
+                fill
+                className="object-cover absolute inset-0 opacity-0 scale-100 group-hover/image:opacity-100 group-hover/image:scale-110 transition-all duration-700"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            )}
+          </>
         ) : (
           <div className="w-full h-full bg-slate-200 dark:bg-slate-700 flex items-center justify-center">
             <span className="text-slate-400">No image available</span>
           </div>
         )}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
         <div className="absolute top-4 left-4">
           <span
             className={`px-3 py-1 rounded-lg text-xs font-semibold capitalize ${categoryColors[project.category]}`}

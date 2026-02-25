@@ -326,7 +326,7 @@ export function ContactForm() {
             <div className="flex items-start space-x-3">
               <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
               <div className="text-slate-600 dark:text-slate-300 text-sm">
-                Nikol, Ahmedabad
+                B/1, Karnavati Park Shopping, Nikol Gam Rd, opp. Mansarovar Complex, Nikol, Ahmedabad, Gujarat 382350
               </div>
             </div>
             <div className="flex items-center space-x-3">
@@ -341,10 +341,10 @@ export function ContactForm() {
             <div className="flex items-center space-x-3">
               <Mail className="w-5 h-5 text-primary flex-shrink-0" />
               <a
-                href="mailto:boradjay2@gmail.com"
+                href="mailto:jbenginnering96@gmail.com"
                 className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
               >
-                boradjay2@gmail.com
+                jbenginnering96@gmail.com
               </a>
             </div>
             <div className="flex items-start space-x-3">

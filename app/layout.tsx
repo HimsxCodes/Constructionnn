@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { SchemaMarkup } from "@/components/SchemaMarkup";
+import logoImg from "@/images/logo.png";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -21,8 +22,8 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "JB Engineering | Commercial & Residential Builders",
   icons: {
-    icon: "/images/logo.png",
-    apple: "/images/logo.png",
+    icon: logoImg.src,
+    apple: logoImg.src,
   },
   description:
     "Expert construction services delivering excellence, reliability, and unmatched quality for over 25 years. Specializing in residential, commercial, and industrial construction projects.",
