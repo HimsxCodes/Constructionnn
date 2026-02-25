@@ -141,7 +141,7 @@ export function ContactForm() {
 
   return (
     <div className="flex flex-col lg:flex-row gap-8 lg:items-start">
-      <div className="flex-1">
+      <div className="w-full lg:flex-1">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
