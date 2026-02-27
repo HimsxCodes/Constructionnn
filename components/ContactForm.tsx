@@ -140,8 +140,8 @@ export function ContactForm() {
   }
 
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      <div className="lg:col-span-2">
+    <div className="flex flex-col lg:flex-row gap-8 lg:items-start">
+      <div className="w-full lg:flex-1">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
@@ -154,11 +154,10 @@ export function ContactForm() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 rounded-lg border-2 ${
-                  errors.name
+                className={`w-full px-4 py-3 rounded-lg border-2 ${errors.name
                     ? "border-red-500"
                     : "border-slate-300 dark:border-slate-600 focus:border-primary"
-                } bg-white dark:bg-slate-800 text-slate-dark dark:text-white focus:outline-none transition-colors`}
+                  } bg-white dark:bg-slate-800 text-slate-dark dark:text-white focus:outline-none transition-colors`}
                 aria-invalid={!!errors.name}
                 aria-describedby={errors.name ? "name-error" : undefined}
               />
@@ -179,11 +178,10 @@ export function ContactForm() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 rounded-lg border-2 ${
-                  errors.email
+                className={`w-full px-4 py-3 rounded-lg border-2 ${errors.email
                     ? "border-red-500"
                     : "border-slate-300 dark:border-slate-600 focus:border-primary"
-                } bg-white dark:bg-slate-800 text-slate-dark dark:text-white focus:outline-none transition-colors`}
+                  } bg-white dark:bg-slate-800 text-slate-dark dark:text-white focus:outline-none transition-colors`}
                 aria-invalid={!!errors.email}
                 aria-describedby={errors.email ? "email-error" : undefined}
               />
@@ -206,11 +204,10 @@ export function ContactForm() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 rounded-lg border-2 ${
-                  errors.phone
+                className={`w-full px-4 py-3 rounded-lg border-2 ${errors.phone
                     ? "border-red-500"
                     : "border-slate-300 dark:border-slate-600 focus:border-primary"
-                } bg-white dark:bg-slate-800 text-slate-dark dark:text-white focus:outline-none transition-colors`}
+                  } bg-white dark:bg-slate-800 text-slate-dark dark:text-white focus:outline-none transition-colors`}
                 aria-invalid={!!errors.phone}
                 aria-describedby={errors.phone ? "phone-error" : undefined}
               />
@@ -230,11 +227,10 @@ export function ContactForm() {
                 name="projectType"
                 value={formData.projectType}
                 onChange={handleChange}
-                className={`w-full px-4 py-3 rounded-lg border-2 ${
-                  errors.projectType
+                className={`w-full px-4 py-3 rounded-lg border-2 ${errors.projectType
                     ? "border-red-500"
                     : "border-slate-300 dark:border-slate-600 focus:border-primary"
-                } bg-white dark:bg-slate-800 text-slate-dark dark:text-white focus:outline-none transition-colors`}
+                  } bg-white dark:bg-slate-800 text-slate-dark dark:text-white focus:outline-none transition-colors`}
                 aria-invalid={!!errors.projectType}
                 aria-describedby={errors.projectType ? "projectType-error" : undefined}
               >
@@ -282,11 +278,10 @@ export function ContactForm() {
               value={formData.message}
               onChange={handleChange}
               rows={6}
-              className={`w-full px-4 py-3 rounded-lg border-2 ${
-                errors.message
+              className={`w-full px-4 py-3 rounded-lg border-2 ${errors.message
                   ? "border-red-500"
                   : "border-slate-300 dark:border-slate-600 focus:border-primary"
-              } bg-white dark:bg-slate-800 text-slate-dark dark:text-white focus:outline-none transition-colors resize-none`}
+                } bg-white dark:bg-slate-800 text-slate-dark dark:text-white focus:outline-none transition-colors resize-none`}
               aria-invalid={!!errors.message}
               aria-describedby={errors.message ? "message-error" : undefined}
             />
@@ -317,44 +312,46 @@ export function ContactForm() {
         </form>
       </div>
 
-      <div className="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 space-y-6">
-        <div>
-          <h3 className="text-xl font-heading font-bold text-slate-dark dark:text-white mb-4">
-            Contact Information
-          </h3>
-          <div className="space-y-4">
-            <div className="flex items-start space-x-3">
-              <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-              <div className="text-slate-600 dark:text-slate-300 text-sm">
-                B/1, Karnavati Park Shopping, Nikol Gam Rd, opp. Mansarovar Complex, Nikol, Ahmedabad, Gujarat 382350
+      <div className="w-full lg:max-w-sm">
+        <div className="bg-slate-100 dark:bg-slate-800 rounded-lg p-6 space-y-6">
+          <div>
+            <h3 className="text-xl font-heading font-bold text-slate-dark dark:text-white mb-4">
+              Contact Information
+            </h3>
+            <div className="space-y-4">
+              <div className="flex items-start space-x-3">
+                <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                <div className="text-slate-600 dark:text-slate-300 text-sm">
+                  B/1, Karnavati Park Shopping, Nikol Gam Rd, opp. Mansarovar Complex, Nikol, Ahmedabad, Gujarat 382350
+                </div>
               </div>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Phone className="w-5 h-5 text-primary flex-shrink-0" />
-              <a
-                href="tel:+917016475798"
-                className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
-              >
-                +91 7016475798
-              </a>
-            </div>
-            <div className="flex items-center space-x-3">
-              <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-              <a
-                href="mailto:jbenginnering96@gmail.com"
-                className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
-              >
-                jbenginnering96@gmail.com
-              </a>
-            </div>
-            <div className="flex items-start space-x-3">
-              <Clock className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-              <div className="text-slate-600 dark:text-slate-300 text-sm">
-                Monday - Friday: 7AM - 6PM
-                <br />
-                Saturday: 8AM - 4PM
-                <br />
-                Sunday: Closed
+              <div className="flex items-center space-x-3">
+                <Phone className="w-5 h-5 text-primary flex-shrink-0" />
+                <a
+                  href="tel:+917016475798"
+                  className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
+                >
+                  +91 7016475798
+                </a>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="w-5 h-5 text-primary flex-shrink-0" />
+                <a
+                  href="mailto:jbengineering96@gmail.com"
+                  className="text-slate-600 dark:text-slate-300 hover:text-primary transition-colors text-sm"
+                >
+                  jbengineering96@gmail.com
+                </a>
+              </div>
+              <div className="flex items-start space-x-3">
+                <Clock className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                <div className="text-slate-600 dark:text-slate-300 text-sm">
+                  Monday - Friday: 7AM - 6PM
+                  <br />
+                  Saturday: 8AM - 4PM
+                  <br />
+                  Sunday: Closed
+                </div>
               </div>
             </div>
           </div>
