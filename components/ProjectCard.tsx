@@ -20,12 +20,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <motion.div
-      className="bg-white dark:bg-slate-800 rounded-lg overflow-hidden shadow-card hover:shadow-card-hover transition-all group"
+      className="group relative bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-card hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300 h-full flex flex-col border border-slate-100 dark:border-slate-700"
       whileHover={{ y: -8 }}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
+      transition={{ duration: 0.25, ease: "easeOut" }}
     >
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-0 pointer-events-none" />
+
       <div className="relative h-64 overflow-hidden group/image">
         {project.images[0] ? (
           <>
@@ -75,18 +78,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
       </div>
-      <div className="p-6">
-        <p className="text-slate-600 dark:text-slate-300 text-sm line-clamp-2 mb-4">
+      <div className="p-6 relative z-10 flex flex-col flex-grow">
+        <p className="text-slate-600 dark:text-slate-300 text-sm line-clamp-2 mb-4 flex-grow">
           {project.description}
         </p>
         <Link
           href={`/projects/${project.id}`}
-          className="inline-flex items-center space-x-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all"
+          className="inline-flex items-center space-x-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all mt-auto"
         >
           <span>View Details</span>
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
+
+      {/* Animated bottom border like ServiceCard */}
+      <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gradient-to-r from-primary/0 via-primary to-primary/0 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-x-0 group-hover:scale-x-100 origin-center z-20" />
     </motion.div>
   );
 }
