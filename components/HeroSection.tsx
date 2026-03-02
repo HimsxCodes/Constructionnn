@@ -40,7 +40,7 @@ export function HeroSection() {
     <section
       ref={sectionRef}
       onMouseMove={onMove}
-      className="relative min-h-[100dvh] bg-[#08080d] overflow-hidden flex flex-col"
+      className="relative min-h-[100dvh] bg-slate-50 dark:bg-[#08080d] overflow-hidden flex flex-col"
     >
       {/* ─── Background layers ─── */}
 
@@ -49,24 +49,24 @@ export function HeroSection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 25% 55%, rgba(255,107,53,0.035) 0%, transparent 65%), radial-gradient(ellipse 40% 40% at 75% 30%, rgba(120,140,255,0.02) 0%, transparent 60%)",
+            "radial-gradient(ellipse 60% 50% at 25% 55%, rgba(255,107,53,0.05) 0%, transparent 65%), radial-gradient(ellipse 40% 40% at 75% 30%, rgba(120,140,255,0.03) 0%, transparent 60%)",
         }}
       />
 
       {/* Film grain */}
       <div
-        className="absolute inset-0 opacity-[0.02] pointer-events-none z-[1]"
+        className="absolute inset-0 opacity-[0.015] dark:opacity-[0.02] pointer-events-none z-[1]"
         style={{
           backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")`,
         }}
       />
 
-      {/* Blueprint grid — very faint */}
+      {/* Blueprint grid */}
       <div
-        className="absolute inset-0 z-[1] pointer-events-none opacity-[0.025]"
+        className="absolute inset-0 z-[1] pointer-events-none opacity-[0.04] dark:opacity-[0.025]"
         style={{
-          backgroundImage: `linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px),
-                            linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px)`,
+          backgroundImage: `linear-gradient(rgba(0,0,0,0.06) 1px, transparent 1px),
+                            linear-gradient(90deg, rgba(0,0,0,0.06) 1px, transparent 1px)`,
           backgroundSize: "90px 90px",
         }}
       />
@@ -79,11 +79,11 @@ export function HeroSection() {
         className="absolute left-5 top-1/2 -translate-y-1/2 z-10 hidden xl:flex items-center gap-4"
         style={{ writingMode: "vertical-lr", transform: "rotate(180deg) translateY(50%)" }}
       >
-        <span className="text-[9px] text-slate-600 tracking-[0.5em] uppercase font-medium">
+        <span className="text-[9px] text-slate-400 dark:text-slate-600 tracking-[0.5em] uppercase font-medium">
           JB Engineering
         </span>
-        <div className="w-px h-8 bg-slate-800" style={{ writingMode: "horizontal-tb" }} />
-        <span className="text-[9px] text-slate-700 tracking-[0.3em] font-mono">
+        <div className="w-px h-8 bg-slate-300 dark:bg-slate-800" style={{ writingMode: "horizontal-tb" }} />
+        <span className="text-[9px] text-slate-400 dark:text-slate-700 tracking-[0.3em] font-mono">
           © 2024
         </span>
       </motion.div>
@@ -91,9 +91,9 @@ export function HeroSection() {
       {/* ─── "24" watermark ─── */}
       <motion.span
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.018 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 2.5, ease, delay: 0.8 }}
-        className="absolute top-1/2 right-[2%] -translate-y-1/2 z-0 pointer-events-none select-none hidden md:block text-[32vw] font-heading font-black text-white leading-none"
+        className="absolute top-1/2 right-[2%] -translate-y-1/2 z-0 pointer-events-none select-none hidden md:block text-[32vw] font-heading font-black leading-none opacity-[0.03] dark:opacity-[0.018] text-slate-900 dark:text-white"
         style={{
           x: useTransform(sx, [-1, 1], [15, -15]),
           y: useTransform(sy, [-1, 1], [10, -10]),
@@ -130,13 +130,13 @@ export function HeroSection() {
         <div className="flex flex-col lg:flex-row lg:items-start lg:gap-12 xl:gap-20">
           {/* Typography block */}
           <div className="flex-1 max-w-[850px]">
-            {/* Line 1 — solid white */}
+            {/* Line 1 — solid */}
             <div className="overflow-hidden">
               <motion.h1
                 initial={{ y: "115%" }}
                 animate={{ y: "0%" }}
                 transition={{ duration: 1.15, ease, delay: 0.4 }}
-                className="text-[clamp(3.2rem,8vw,7.8rem)] font-heading font-black text-white leading-[0.92] tracking-[-0.04em]"
+                className="text-[clamp(3.2rem,8vw,7.8rem)] font-heading font-black text-slate-900 dark:text-white leading-[0.92] tracking-[-0.04em]"
               >
                 Building
               </motion.h1>
@@ -148,11 +148,7 @@ export function HeroSection() {
                 initial={{ y: "115%" }}
                 animate={{ y: "0%" }}
                 transition={{ duration: 1.15, ease, delay: 0.53 }}
-                className="text-[clamp(3.2rem,8vw,7.8rem)] font-heading font-black leading-[0.92] tracking-[-0.04em] select-none"
-                style={{
-                  WebkitTextStroke: "1.5px rgba(255,255,255,0.2)",
-                  color: "transparent",
-                }}
+                className="text-[clamp(3.2rem,8vw,7.8rem)] font-heading font-black leading-[0.92] tracking-[-0.04em] select-none hero-outline-text"
               >
                 Tomorrow&apos;s
               </motion.h1>
@@ -176,7 +172,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 28 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.9, ease, delay: 1.1 }}
-                className="text-slate-400/90 text-[15px] font-light leading-[1.85] max-w-[340px]"
+                className="text-slate-500 dark:text-slate-400/90 text-[15px] font-light leading-[1.85] max-w-[340px]"
               >
                 Precision engineering meets bold vision.
                 We craft structures built to endure,
@@ -202,10 +198,10 @@ export function HeroSection() {
 
                 <Link
                   href="/projects"
-                  className="group text-slate-500 hover:text-white text-[12px] uppercase tracking-[0.18em] font-semibold transition-colors duration-400 relative pb-2"
+                  className="group text-slate-400 dark:text-slate-500 hover:text-slate-900 dark:hover:text-white text-[12px] uppercase tracking-[0.18em] font-semibold transition-colors duration-400 relative pb-2"
                 >
                   View Work
-                  <span className="absolute bottom-0 left-0 w-full h-px bg-slate-800 group-hover:bg-white/40 transition-colors duration-400" />
+                  <span className="absolute bottom-0 left-0 w-full h-px bg-slate-300 dark:bg-slate-800 group-hover:bg-primary transition-colors duration-400" />
                 </Link>
               </motion.div>
             </div>
@@ -237,7 +233,7 @@ export function HeroSection() {
                   />
                 </defs>
                 <text
-                  className="fill-slate-600/60"
+                  className="fill-slate-400/50 dark:fill-slate-600/60"
                   style={{
                     fontSize: "10.5px",
                     letterSpacing: "0.32em",
@@ -259,7 +255,7 @@ export function HeroSection() {
                   cy="130"
                   r="120"
                   fill="none"
-                  stroke="rgba(255,255,255,0.03)"
+                  className="stroke-slate-200 dark:stroke-white/[0.03]"
                   strokeWidth="0.5"
                 />
                 <motion.circle
@@ -267,7 +263,7 @@ export function HeroSection() {
                   cy="130"
                   r="82"
                   fill="none"
-                  stroke="rgba(255,107,53,0.09)"
+                  stroke="rgba(255,107,53,0.12)"
                   strokeWidth="0.7"
                   strokeDasharray="3 9"
                   initial={{ pathLength: 0, rotate: 0 }}
@@ -282,13 +278,13 @@ export function HeroSection() {
                   initial={{ opacity: 0, rotate: 0 }}
                   animate={{ opacity: 1, rotate: 45 }}
                   transition={{ duration: 1.2, ease, delay: 1.8 }}
-                  className="w-[55px] h-[55px] xl:w-[65px] xl:h-[65px] border border-slate-700/40 flex items-center justify-center"
+                  className="w-[55px] h-[55px] xl:w-[65px] xl:h-[65px] border border-slate-300/60 dark:border-slate-700/40 flex items-center justify-center"
                 >
                   <motion.div
                     initial={{ opacity: 0, scale: 0 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, ease, delay: 2.2 }}
-                    className="w-[28px] h-[28px] xl:w-[32px] xl:h-[32px] border border-primary/25 -rotate-45"
+                    className="w-[28px] h-[28px] xl:w-[32px] xl:h-[32px] border border-primary/30 dark:border-primary/25 -rotate-45"
                   />
                 </motion.div>
               </div>
@@ -308,7 +304,7 @@ export function HeroSection() {
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
             transition={{ duration: 2.2, ease, delay: 1.7 }}
-            className="h-px max-w-2xl bg-gradient-to-r from-slate-700/40 via-slate-800/20 to-transparent origin-left mb-6"
+            className="h-px max-w-2xl bg-gradient-to-r from-slate-300/60 dark:from-slate-700/40 via-slate-200/30 dark:via-slate-800/20 to-transparent origin-left mb-6"
           />
 
           <div className="flex flex-wrap items-center gap-x-8 gap-y-3 lg:gap-x-14">
@@ -324,14 +320,14 @@ export function HeroSection() {
                 transition={{ duration: 0.65, ease, delay: 2 + i * 0.1 }}
                 className="flex items-center gap-3"
               >
-                <span className="text-[9px] font-mono text-primary/45 tracking-widest">
+                <span className="text-[9px] font-mono text-primary/55 dark:text-primary/45 tracking-widest">
                   {item.n}
                 </span>
                 <span className="text-[11px] text-slate-500/80 font-medium tracking-[0.06em]">
                   {item.label}
                 </span>
                 {i < 2 && (
-                  <div className="w-px h-3 bg-slate-800/60 ml-5 lg:ml-10 hidden sm:block" />
+                  <div className="w-px h-3 bg-slate-300/60 dark:bg-slate-800/60 ml-5 lg:ml-10 hidden sm:block" />
                 )}
               </motion.div>
             ))}
@@ -347,14 +343,14 @@ export function HeroSection() {
         className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-0"
       >
         <motion.div
-          className="w-px h-10 bg-gradient-to-b from-slate-500/60 to-transparent origin-top"
+          className="w-px h-10 bg-gradient-to-b from-slate-400/50 dark:from-slate-500/60 to-transparent origin-top"
           animate={{ scaleY: [1, 0.3, 1], opacity: [0.6, 0.2, 0.6] }}
           transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
         />
       </motion.div>
 
       {/* ─── Bottom marquee bar ─── */}
-      <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-white/[0.03] overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-slate-200/50 dark:border-white/[0.03] overflow-hidden">
         <div className="flex items-center py-3 whitespace-nowrap">
           <motion.div
             className="flex items-center"
@@ -374,10 +370,10 @@ export function HeroSection() {
                   "INTERIORS",
                 ].map((w, i) => (
                   <span key={`${si}-${i}`} className="flex items-center">
-                    <span className="mx-5 text-[9px] font-medium tracking-[0.45em] uppercase text-white/[0.08]">
+                    <span className="mx-5 text-[9px] font-medium tracking-[0.45em] uppercase text-slate-900/[0.08] dark:text-white/[0.08]">
                       {w}
                     </span>
-                    <span className="w-[3px] h-[3px] rounded-full bg-primary/15" />
+                    <span className="w-[3px] h-[3px] rounded-full bg-primary/20 dark:bg-primary/15" />
                   </span>
                 ))}
               </div>
