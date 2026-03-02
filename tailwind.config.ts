@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
+          light: "#FFA07A",
           DEFAULT: "#FF6B35",
           dark: "#E55A2B",
         },
@@ -30,6 +31,14 @@ const config: Config = {
         cta: "0 10px 25px -5px rgba(255, 107, 53, 0.3), 0 8px 10px -6px rgba(255, 107, 53, 0.3)",
         card: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
         "card-hover": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      },
+      keyframes: {
+        shimmer: {
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
+      animation: {
+        shimmer: "shimmer 2s infinite",
       },
     },
   },
