@@ -1,70 +1,88 @@
-# JB Engineering Construction Website
+# JB Engineering — Construction Website
 
-A production-ready construction company website built with Next.js 14, TypeScript, Tailwind CSS, and Framer Motion.
+> A premium, production-ready construction company website built with **Next.js 14**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**.
 
-## Features
+---
 
-- **Modern Tech Stack**: Next.js 14 with App Router, TypeScript, Tailwind CSS
-- **Dark/Light Mode**: Complete theme system with system preference detection
-- **Responsive Design**: Mobile-first approach with full tablet and desktop support
-- **Performance Optimized**: Image optimization, code splitting, and lazy loading
-- **SEO Ready**: Complete metadata, Open Graph tags, and schema markup
-- **Accessibility**: WCAG 2.1 AA compliant with proper ARIA labels
-- **Animations**: Smooth Framer Motion animations throughout
-- **Form Validation**: Robust client-side validation for contact forms
+## ✨ Features
 
-## Getting Started
+| Category              | Details                                                                       |
+| --------------------- | ----------------------------------------------------------------------------- |
+| **Modern Tech Stack** | Next.js 14 (App Router), TypeScript, Tailwind CSS                             |
+| **Theming**           | Dark / Light mode with system preference detection & localStorage persistence |
+| **Responsive Design** | Mobile-first layout with full tablet & desktop support                        |
+| **Performance**       | Next.js Image optimization, code splitting, lazy loading, WebP/AVIF support   |
+| **SEO**               | Complete metadata, Open Graph & Twitter cards, Schema.org markup              |
+| **Accessibility**     | WCAG 2.1 AA compliant with proper ARIA labels & semantic HTML5                |
+| **Animations**        | Smooth Framer Motion animations & scroll-triggered reveals                    |
+| **Contact & Quotes**  | Validated contact form with Supabase storage + Resend email notifications     |
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+ 
-- npm or yarn
+- **Node.js** 18+
+- **npm** or **yarn**
 
 ### Installation
 
-1. Install dependencies:
-```bash
-npm install
-```
+1. **Install dependencies:**
 
-2. **Environment variables** (Get a Quote feature): Copy `.env.local.example` to `.env.local` and fill in your values:
-   - `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY` from [Supabase](https://supabase.com) → Project Settings → API
-   - `RESEND_API_KEY` from [Resend](https://resend.com)
-   - `ADMIN_EMAIL`: receiver email(s), comma-separated for multiple
+   ```bash
+   npm install
+   ```
 
-3. Run the development server:
-```bash
-npm run dev
-```
+2. **Environment variables** _(required for the Get a Quote feature)_
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+   Copy `.env.local.example` to `.env.local` and provide the following values:
 
-### Get a Quote – Supabase table setup
+   | Variable                        | Source                                                    |
+   | ------------------------------- | --------------------------------------------------------- |
+   | `NEXT_PUBLIC_SUPABASE_URL`      | [Supabase](https://supabase.com) → Project Settings → API |
+   | `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Same as above                                             |
+   | `RESEND_API_KEY`                | [Resend](https://resend.com)                              |
+   | `ADMIN_EMAIL`                   | Receiver email(s) — comma-separated for multiple          |
 
-In the Supabase **SQL Editor**, run the following to create the `quote_requests` table:
+3. **Start the dev server:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open **[http://localhost:3000](http://localhost:3000)** in your browser.
+
+---
+
+### Supabase Table Setup (Get a Quote)
+
+Run the following SQL in the Supabase **SQL Editor** to create the `quote_requests` table:
 
 ```sql
-create table public.quote_requests (
-  id uuid not null default gen_random_uuid (),
-  created_at timestamp with time zone not null default now(),
-  name text not null,
-  email text not null,
-  phone text not null,
-  project_type text not null,
-  budget text null,
-  message text not null,
-  status text not null default 'new'::text,
-  constraint quote_requests_pkey primary key (id)
+CREATE TABLE public.quote_requests (
+  id         UUID        NOT NULL DEFAULT gen_random_uuid(),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+  name       TEXT        NOT NULL,
+  email      TEXT        NOT NULL,
+  phone      TEXT        NOT NULL,
+  project_type TEXT      NOT NULL,
+  budget     TEXT        NULL,
+  message    TEXT        NOT NULL,
+  status     TEXT        NOT NULL DEFAULT 'new'::TEXT,
+  CONSTRAINT quote_requests_pkey PRIMARY KEY (id)
 );
 
--- Optional: enable Row Level Security (RLS) and allow anonymous inserts for the form
-alter table public.quote_requests enable row level security;
+-- Enable Row Level Security (RLS) and allow anonymous inserts for the form
+ALTER TABLE public.quote_requests ENABLE ROW LEVEL SECURITY;
 
-create policy "Allow anonymous insert for quote form"
-  on public.quote_requests for insert
-  to anon
-  with check (true);
+CREATE POLICY "Allow anonymous insert for quote form"
+  ON public.quote_requests FOR INSERT
+  TO anon
+  WITH CHECK (true);
 ```
+
+---
 
 ### Build for Production
 
@@ -73,117 +91,190 @@ npm run build
 npm start
 ```
 
-## Project Structure
+---
+
+## 📁 Project Structure
 
 ```
-├── app/                    # Next.js App Router pages
-│   ├── layout.tsx         # Root layout with fonts and metadata
-│   ├── page.tsx           # Home page
-│   ├── services/          # Services page
-│   ├── projects/          # Projects listing and detail pages
-│   ├── about/             # About page
-│   └── contact/           # Contact page
-├── components/            # React components
-│   ├── Navbar.tsx        # Navigation with mobile menu
-│   ├── Footer.tsx        # Footer component
-│   ├── HeroSection.tsx   # Hero section with CTAs
-│   ├── ServiceCard.tsx   # Service display card
-│   ├── ProjectCard.tsx   # Project display card
-│   ├── ProjectGallery.tsx # Project gallery with filtering
-│   ├── StatsCounter.tsx  # Animated statistics counter
-│   ├── ContactForm.tsx   # Contact form with validation
-│   ├── BeforeAfterSlider.tsx # Interactive before/after slider
-│   ├── TestimonialCard.tsx # Client testimonial card
-│   ├── ThemeToggle.tsx   # Dark/light mode toggle
-│   └── SchemaMarkup.tsx  # SEO schema markup
-├── data/                  # Mock data
-│   ├── projects.ts       # Project data
-│   ├── services.ts       # Service data
-│   └── testimonials.ts   # Testimonial data
-├── types/                 # TypeScript type definitions
+constructionnnnn/
+├── app/                          # Next.js App Router
+│   ├── layout.tsx                # Root layout (fonts, metadata, Navbar, Footer)
+│   ├── page.tsx                  # Home page
+│   ├── not-found.tsx             # Custom 404 page
+│   ├── globals.css               # Global styles & theme variables
+│   ├── about/                    # About page (layout + page)
+│   ├── services/                 # Services page
+│   ├── projects/                 # Projects listing page
+│   │   └── [id]/                 # Dynamic project detail pages
+│   ├── contact/                  # Contact page
+│   └── api/
+│       └── quote/                # Quote request API route (Supabase + Resend)
+│
+├── components/                   # React components
+│   ├── Navbar.tsx                # Responsive navigation with mobile menu
+│   ├── Footer.tsx                # Site footer with social links
+│   ├── HeroSection.tsx           # Animated hero section with CTAs
+│   ├── ServiceCard.tsx           # Service display card
+│   ├── ProjectCard.tsx           # Project display card
+│   ├── ProjectGallery.tsx        # Filterable project gallery
+│   ├── StatsCounter.tsx          # Animated statistics counter
+│   ├── ContactForm.tsx           # Contact / quote form with validation
+│   ├── BeforeAfterSlider.tsx     # Interactive before/after image slider
+│   ├── TestimonialCard.tsx       # Client testimonial card
+│   ├── ThemeToggle.tsx           # Dark/light mode toggle with custom icons
+│   ├── FadeIn.tsx                # Reusable fade-in animation wrapper
+│   └── SchemaMarkup.tsx          # SEO structured data (Schema.org)
+│
+├── data/                         # Static / mock data
+│   ├── projects.ts               # Project listings
+│   ├── services.ts               # Service offerings
+│   └── testimonials.ts           # Client testimonials
+│
+├── types/                        # TypeScript type definitions
 │   ├── project.ts
 │   ├── service.ts
 │   └── testimonial.ts
-├── hooks/                 # Custom React hooks
-│   ├── useTheme.ts       # Theme management hook
-│   ├── useCountUp.ts     # Number animation hook
-│   └── useScrollAnimation.ts # Scroll animation hook
-└── lib/                   # Utility functions
-    └── validation.ts     # Form validation utilities
+│
+├── hooks/                        # Custom React hooks
+│   ├── useTheme.ts               # Theme management (dark/light)
+│   ├── useCountUp.ts             # Animated number counter
+│   └── useScrollAnimation.ts     # Intersection Observer scroll hook
+│
+├── lib/                          # Utility & integration modules
+│   ├── validation.ts             # Form validation helpers
+│   ├── supabase.ts               # Supabase client initialisation
+│   └── email.ts                  # Resend email integration
+│
+├── images/                       # Project & branding images
+│   ├── logo.png                  # Company logo
+│   ├── logo2.png                 # Alternate logo variant
+│   ├── heroimage.jpg             # Hero section background
+│   └── ...                       # Project-specific images
+│
+├── public/                       # Static public assets
+│
+├── tailwind.config.ts            # Tailwind CSS configuration
+├── tsconfig.json                 # TypeScript configuration
+├── next.config.js                # Next.js configuration
+├── postcss.config.mjs            # PostCSS configuration
+└── package.json
 ```
 
-## Customization
+---
+
+## 🎨 Customization
 
 ### Colors
 
-Edit `tailwind.config.ts` to customize the color palette:
-- Primary: `#FF6B35` (construction orange)
-- Dark Slate: `#1F2937`
+Edit `tailwind.config.ts` to change the brand palette:
+
+| Token             | Default   | Description                                   |
+| ----------------- | --------- | --------------------------------------------- |
+| `primary.DEFAULT` | `#FF6B35` | Construction orange — buttons, links, accents |
+| `primary.light`   | `#FFA07A` | Lighter tint for hover states                 |
+| `primary.dark`    | `#E55A2B` | Darker shade for active states                |
+| `slate.dark`      | `#1F2937` | Dark background & text                        |
+| `slate.light`     | `#F9FAFB` | Light background                              |
+
+### Fonts
+
+The site uses **Inter** (body) and **Poppins** (headings), loaded via Google Fonts with `display: swap`.
 
 ### Content
 
-Update data files in the `data/` directory:
-- `data/projects.ts` - Add/modify project listings
-- `data/services.ts` - Update service offerings
-- `data/testimonials.ts` - Add client testimonials
+Update the data files in `data/` to change site content:
+
+- `data/projects.ts` — Add or modify project listings
+- `data/services.ts` — Update service offerings
+- `data/testimonials.ts` — Add client testimonials
 
 ### Images
 
-Place project images in `public/projects/` directory and update image paths in project data.
+Place project images in the `images/` directory and reference them in the corresponding data files.
 
-## Performance
+---
 
-- Images optimized with Next.js Image component
-- Automatic code splitting via App Router
-- Lazy loading for project galleries
-- WebP/AVIF image formats supported
+## ⚡ Performance
 
-## SEO
+- **Image Optimization** — Next.js `<Image>` component with automatic WebP/AVIF conversion
+- **Code Splitting** — Automatic per-route splitting via the App Router
+- **Lazy Loading** — Intersection Observer–based loading for galleries and heavy sections
+- **Font Loading** — `display: swap` prevents invisible text during font load
 
-- Complete metadata for all pages
-- Open Graph tags for social sharing
-- Schema.org markup for LocalBusiness, Service, and AggregateRating
-- Semantic HTML5 structure
-- Proper heading hierarchy
+---
 
-## Browser Support
+## 🔍 SEO
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+- Complete `<meta>` tags for every page (title, description, keywords)
+- Open Graph & Twitter Card tags for social sharing
+- Schema.org structured data (`LocalBusiness`, `Service`, `AggregateRating`)
+- Semantic HTML5 landmarks and proper heading hierarchy
+- Robots directives (`index`, `follow`)
 
-## Tech Stack Details
+---
 
-- **Framework**: Next.js 14.2.5 (App Router)
-- **Language**: TypeScript 5.5.3
-- **Styling**: Tailwind CSS 3.4.4
-- **Animations**: Framer Motion 11.3.19
-- **Icons**: Lucide React 0.400.0
-- **Fonts**: Inter & Poppins (Google Fonts)
+## 🛠️ Tech Stack
 
-## Development Notes
+| Technology                                     | Version | Purpose                      |
+| ---------------------------------------------- | ------- | ---------------------------- |
+| [Next.js](https://nextjs.org)                  | 14.2.5  | React framework (App Router) |
+| [TypeScript](https://typescriptlang.org)       | 5.5.3   | Type-safe JavaScript         |
+| [Tailwind CSS](https://tailwindcss.com)        | 3.4.4   | Utility-first styling        |
+| [Framer Motion](https://www.framer.com/motion) | 11.3.19 | Declarative animations       |
+| [Lucide React](https://lucide.dev)             | 0.400.0 | Icon library                 |
+| [Supabase](https://supabase.com)               | 2.45.0  | Quote request storage        |
+| [Resend](https://resend.com)                   | 4.0.0   | Transactional email          |
+| Inter & Poppins                                | —       | Google Fonts                 |
 
-- All components using framer-motion are marked with `"use client"` directive
-- Theme system uses localStorage for persistence
-- Form validation includes email and phone number validation
-- Images are optimized using Next.js Image component with WebP/AVIF support
+---
 
-## Troubleshooting
+## 🌐 Browser Support
 
-### PowerShell Execution Policy Error
-If you encounter PowerShell script execution errors on Windows, use Command Prompt (cmd.exe) instead, or run:
+| Browser | Supported |
+| ------- | --------- |
+| Chrome  | ✅ Latest |
+| Firefox | ✅ Latest |
+| Safari  | ✅ Latest |
+| Edge    | ✅ Latest |
+
+---
+
+## 📝 Development Notes
+
+- All interactive components using Framer Motion are marked with the `"use client"` directive.
+- The theme system uses `localStorage` for persistence and respects the user's system preference on first visit.
+- Form validation includes email format and phone number pattern checks.
+- The `FadeIn` component wraps sections for consistent scroll-triggered entrance animations.
+
+---
+
+## 🐛 Troubleshooting
+
+### PowerShell Execution Policy Error (Windows)
+
+If you encounter script execution errors, use Command Prompt or run:
+
 ```powershell
 powershell -ExecutionPolicy Bypass -Command "npm run dev"
 ```
 
-### Framer Motion Errors
-If you see framer-motion module errors, clear the Next.js cache:
+### Framer Motion Module Errors
+
+Clear the Next.js cache and restart:
+
 ```bash
 rm -rf .next
 npm run dev
 ```
 
-## License
+### Supabase / Resend Not Working
 
-This project is proprietary and confidential.
+- Double-check that `.env.local` exists and contains the correct values.
+- Ensure the `quote_requests` table has been created (see setup SQL above).
+- Verify that the Resend API key is valid and the sender domain is verified.
+
+---
+
+## 📄 License
+
+This project is **proprietary and confidential**.
