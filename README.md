@@ -277,4 +277,4 @@ npm run dev
 
 ## 📄 License
 
-This project is **proprietary and confidential**.
+This project is **open source**.
