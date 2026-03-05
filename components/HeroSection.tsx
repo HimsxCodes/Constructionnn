@@ -1,9 +1,9 @@
 "use client";
 
-import { motion, useScroll, useTransform, useMotionValue, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { useRef, useCallback } from "react";
+import { useRef } from "react";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -11,12 +11,6 @@ const circularText = "BUILD WITH PURPOSE • DESIGN WITH PRECISION • DELIVER W
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const springCfg = { stiffness: 40, damping: 28, mass: 1.2 };
-  const sx = useSpring(mouseX, springCfg);
-  const sy = useSpring(mouseY, springCfg);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -26,42 +20,23 @@ export function HeroSection() {
   const fadeOut = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   const slideUp = useTransform(scrollYProgress, [0, 0.5], [0, -100]);
 
-  const onMove = useCallback(
-    (e: React.MouseEvent) => {
-      const r = sectionRef.current?.getBoundingClientRect();
-      if (!r) return;
-      mouseX.set(((e.clientX - r.left) / r.width - 0.5) * 2);
-      mouseY.set(((e.clientY - r.top) / r.height - 0.5) * 2);
-    },
-    [mouseX, mouseY]
-  );
-
   return (
     <section
       ref={sectionRef}
-      onMouseMove={onMove}
       className="relative min-h-[100dvh] bg-slate-50 dark:bg-[#08080d] overflow-hidden flex flex-col"
     >
       {/* ─── Background layers ─── */}
 
-      {/* Warm ambient glow */}
+      {/* Warm ambient glow — static, no repaint cost */}
       <div
-        className="absolute inset-0 pointer-events-none"
+        className="absolute inset-0 pointer-events-none will-change-auto"
         style={{
           background:
             "radial-gradient(ellipse 60% 50% at 25% 55%, rgba(255,107,53,0.05) 0%, transparent 65%), radial-gradient(ellipse 40% 40% at 75% 30%, rgba(120,140,255,0.03) 0%, transparent 60%)",
         }}
       />
 
-      {/* Film grain */}
-      <div
-        className="absolute inset-0 opacity-[0.015] dark:opacity-[0.02] pointer-events-none z-[1]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")`,
-        }}
-      />
-
-      {/* Blueprint grid */}
+      {/* Blueprint grid — static CSS pattern, lightweight */}
       <div
         className="absolute inset-0 z-[1] pointer-events-none opacity-[0.04] dark:opacity-[0.025]"
         style={{
@@ -88,24 +63,17 @@ export function HeroSection() {
         </span>
       </motion.div>
 
-      {/* ─── "24" watermark ─── */}
-      <motion.span
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 2.5, ease, delay: 0.8 }}
+      {/* ─── "24" watermark — pure CSS, no motion tracking ─── */}
+      <div
         className="absolute top-1/2 right-[2%] -translate-y-1/2 z-0 pointer-events-none select-none hidden md:block text-[32vw] font-heading font-black leading-none opacity-[0.03] dark:opacity-[0.018] text-slate-900 dark:text-white"
-        style={{
-          x: useTransform(sx, [-1, 1], [15, -15]),
-          y: useTransform(sy, [-1, 1], [10, -10]),
-        }}
         aria-hidden="true"
       >
         24
-      </motion.span>
+      </div>
 
-      {/* ─── Main content ─── */}
+      {/* ─── Main content — GPU-accelerated scroll transform ─── */}
       <motion.div
-        className="flex-1 flex flex-col justify-center relative z-10 pl-8 pr-8 sm:pl-14 sm:pr-14 lg:pl-24 lg:pr-16 xl:pl-32 xl:pr-24 pt-32 pb-44"
+        className="flex-1 flex flex-col justify-center relative z-10 pl-8 pr-8 sm:pl-14 sm:pr-14 lg:pl-24 lg:pr-16 xl:pl-32 xl:pr-24 pt-32 pb-44 will-change-transform"
         style={{ opacity: fadeOut, y: slideUp }}
       >
         {/* Small tagline */}
@@ -207,24 +175,18 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* ─── Rotating services circle ─── */}
+          {/* ─── Rotating services circle — CSS animation instead of framer-motion ─── */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.85, rotate: -20 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.6, ease, delay: 1 }}
             className="hidden lg:flex items-center justify-center flex-shrink-0 mt-6"
-            style={{
-              x: useTransform(sx, [-1, 1], [-12, 12]),
-              y: useTransform(sy, [-1, 1], [-12, 12]),
-            }}
           >
             <div className="relative w-[200px] h-[200px] xl:w-[250px] xl:h-[250px]">
-              {/* Rotating text ring */}
-              <motion.svg
+              {/* Rotating text ring — CSS animation for GPU compositing */}
+              <svg
                 viewBox="0 0 260 260"
-                className="w-full h-full"
-                animate={{ rotate: 360 }}
-                transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+                className="w-full h-full animate-[spin_45s_linear_infinite] will-change-transform"
               >
                 <defs>
                   <path
@@ -243,7 +205,7 @@ export function HeroSection() {
                 >
                   <textPath href="#textRing">{circularText}</textPath>
                 </text>
-              </motion.svg>
+              </svg>
 
               {/* Dashed orbit */}
               <svg
@@ -258,7 +220,7 @@ export function HeroSection() {
                   className="stroke-slate-200 dark:stroke-white/[0.03]"
                   strokeWidth="0.5"
                 />
-                <motion.circle
+                <circle
                   cx="130"
                   cy="130"
                   r="82"
@@ -266,9 +228,6 @@ export function HeroSection() {
                   stroke="rgba(255,107,53,0.12)"
                   strokeWidth="0.7"
                   strokeDasharray="3 9"
-                  initial={{ pathLength: 0, rotate: 0 }}
-                  animate={{ pathLength: 1 }}
-                  transition={{ duration: 3.5, ease, delay: 1.5 }}
                 />
               </svg>
 
@@ -342,20 +301,14 @@ export function HeroSection() {
         transition={{ delay: 2.8, duration: 1 }}
         className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-0"
       >
-        <motion.div
-          className="w-px h-10 bg-gradient-to-b from-slate-400/50 dark:from-slate-500/60 to-transparent origin-top"
-          animate={{ scaleY: [1, 0.3, 1], opacity: [0.6, 0.2, 0.6] }}
-          transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
-        />
+        <div className="w-px h-10 bg-gradient-to-b from-slate-400/50 dark:from-slate-500/60 to-transparent origin-top animate-pulse" />
       </motion.div>
 
-      {/* ─── Bottom marquee bar ─── */}
+      {/* ─── Bottom marquee bar — CSS animation for GPU compositing ─── */}
       <div className="absolute bottom-0 left-0 right-0 z-10 border-t border-slate-200/50 dark:border-white/[0.03] overflow-hidden">
         <div className="flex items-center py-3 whitespace-nowrap">
-          <motion.div
-            className="flex items-center"
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          <div
+            className="flex items-center animate-marquee will-change-transform"
           >
             {[0, 1].map((si) => (
               <div key={si} className="flex items-center">
@@ -378,7 +331,7 @@ export function HeroSection() {
                 ))}
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
