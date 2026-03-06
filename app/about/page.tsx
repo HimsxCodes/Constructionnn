@@ -127,7 +127,7 @@ export default function AboutPage() {
           </motion.div>
 
           {/* Headline */}
-          <div className="overflow-hidden mb-2">
+          <div className="overflow-hidden mb-2 pb-3.5">
             <motion.h1
               initial={{ y: "110%" }}
               animate={{ y: "0%" }}
@@ -137,7 +137,7 @@ export default function AboutPage() {
               The JB Engineering
             </motion.h1>
           </div>
-          <div className="overflow-hidden mb-4">
+          <div className="overflow-hidden mb-4 pb-3.5">
             <motion.h1
               initial={{ y: "110%" }}
               animate={{ y: "0%" }}
