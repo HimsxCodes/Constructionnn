@@ -73,7 +73,7 @@ export function HeroSection() {
 
       {/* ─── Main content — GPU-accelerated scroll transform ─── */}
       <motion.div
-        className="flex-1 flex flex-col justify-center relative z-10 pl-8 pr-8 sm:pl-14 sm:pr-14 lg:pl-24 lg:pr-16 xl:pl-32 xl:pr-24 pt-32 pb-44 will-change-transform"
+        className="flex-1 flex flex-col justify-center relative z-10 pl-8 pr-8 sm:pl-14 sm:pr-14 lg:pl-24 lg:pr-16 xl:pl-32 xl:pr-24 pt-8 pb-16 will-change-transform"
         style={{ opacity: fadeOut, y: slideUp }}
       >
         {/* Small tagline */}
@@ -99,7 +99,7 @@ export function HeroSection() {
           {/* Typography block */}
           <div className="flex-1 max-w-[850px]">
             {/* Line 1 — solid */}
-            <div className="overflow-hidden">
+            <div className="overflow-hidden pb-5">
               <motion.h1
                 initial={{ y: "115%" }}
                 animate={{ y: "0%" }}
