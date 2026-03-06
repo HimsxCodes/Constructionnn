@@ -99,7 +99,7 @@ export function HeroSection() {
           {/* Typography block */}
           <div className="flex-1 max-w-[850px]">
             {/* Line 1 — solid */}
-            <div className="overflow-hidden pb-5">
+            <div className="overflow-hidden pb-6">
               <motion.h1
                 initial={{ y: "115%" }}
                 animate={{ y: "0%" }}
@@ -111,7 +111,7 @@ export function HeroSection() {
             </div>
 
             {/* Line 2 — outlined / stroke */}
-            <div className="overflow-hidden">
+            <div className="overflow-hidden pb-6">
               <motion.h1
                 initial={{ y: "115%" }}
                 animate={{ y: "0%" }}
@@ -123,7 +123,7 @@ export function HeroSection() {
             </div>
 
             {/* Line 3 — accent color */}
-            <div className="overflow-hidden">
+            <div className="overflow-hidden pb-6">
               <motion.h1
                 initial={{ y: "115%" }}
                 animate={{ y: "0%" }}
