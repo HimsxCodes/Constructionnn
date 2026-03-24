@@ -3,10 +3,9 @@ import { HeroSection } from "@/components/HeroSection";
 import { ServiceCard } from "@/components/ServiceCard";
 import { ProjectGallery } from "@/components/ProjectGallery";
 import { StatsCounter } from "@/components/StatsCounter";
-import { TestimonialCard } from "@/components/TestimonialCard";
+import { GoogleReviewsSection } from "@/components/GoogleReviewsSection";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
-import { testimonials } from "@/data/testimonials";
 import { FadeIn } from "@/components/FadeIn";
 import Link from "next/link";
 
@@ -66,13 +65,7 @@ export default function Home() {
               Hear from our satisfied clients about their experience working with us
             </p>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {testimonials.slice(0, 6).map((testimonial, index) => (
-              <FadeIn key={testimonial.id} delay={index * 0.1}>
-                <TestimonialCard testimonial={testimonial} />
-              </FadeIn>
-            ))}
-          </div>
+          <GoogleReviewsSection />
         </div>
       </section>
     </>
